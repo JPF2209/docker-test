@@ -1,12 +1,12 @@
 pipeline {
-    agent any 
+    agent any
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('ad7cd53f-3449-4b14-8844-e817562d0f06	')
+    DOCKERHUB_CREDENTIALS = credentials('6_2hd')
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-            git 'https://github.com/JPF2209/docker-test.git'
+            git branch:'main', url:'https://github.com/JPF2209/docker-test.git'
             }
         }
 
@@ -32,4 +32,3 @@ post {
         }
     }
 }
-
